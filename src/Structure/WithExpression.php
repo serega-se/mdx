@@ -7,6 +7,9 @@ class WithExpression extends Expression
     private string $alias;
     private Expression $expression;
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return $this->alias;
@@ -22,6 +25,7 @@ class WithExpression extends Expression
 
     /**
      * @param string $alias
+     * @return WithExpression
      */
     public function setAlias(string $alias): self
     {
@@ -39,12 +43,11 @@ class WithExpression extends Expression
 
     /**
      * @param Expression $expression
+     * @return WithExpression
      */
     public function setExpression(Expression $expression): self
     {
         $this->expression = $expression;
         return $this;
     }
-
-
 }

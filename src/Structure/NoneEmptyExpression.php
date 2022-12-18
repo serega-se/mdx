@@ -11,6 +11,9 @@ class NoneEmptyExpression extends Expression
         $this->expressions = [];
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return sprintf("NoneEmpty(%s)", implode(', ', $this->getExpressions()));
@@ -26,6 +29,7 @@ class NoneEmptyExpression extends Expression
 
     /**
      * @param Expression $expression
+     * @return $this
      */
     public function addExpression(Expression $expression): self
     {

@@ -1,4 +1,5 @@
 <?php
+
 namespace Se\Mdx\Structure;
 
 use function SebastianBergmann\Type\TestFixture\three;
@@ -18,6 +19,9 @@ class Query
         $this->rows = new NullExpression();
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         $result = [];
@@ -44,7 +48,7 @@ class Query
     }
 
     /**
-     * @return string
+     * @return array
      */
     public function getWith(): array
     {
@@ -105,7 +109,7 @@ class Query
     /**
      * @return Query|string
      */
-    public function getFrom()
+    public function getFrom(): Query|string
     {
         return $this->from;
     }

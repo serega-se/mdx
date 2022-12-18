@@ -1,15 +1,22 @@
 <?php
+
 namespace Se\Mdx\Structure;
 
 class MemberExpression extends Expression
 {
     private string $expression;
 
+    /**
+     * @param string $expression
+     */
     public function __construct(string $expression)
     {
         $this->expression = $expression;
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return $this->getExpression();
@@ -32,6 +39,4 @@ class MemberExpression extends Expression
         $this->expression = $expression;
         return $this;
     }
-
-
 }

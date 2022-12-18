@@ -1,4 +1,5 @@
 <?php
+
 namespace Se\Mdx\Structure;
 
 class SetExpression extends Expression
@@ -6,6 +7,9 @@ class SetExpression extends Expression
 
     private array $expressions;
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return sprintf("{%s}", implode(', ', $this->expressions));

@@ -6,6 +6,9 @@ class CrossJoinExpression extends Expression
 {
     private array $expressions;
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return implode(' * ', $this->expressions);
@@ -21,7 +24,7 @@ class CrossJoinExpression extends Expression
 
     /**
      * @param Expression $expression
-     * @return SetExpression
+     * @return CrossJoinExpression
      */
     public function addExpression(Expression $expression): self
     {

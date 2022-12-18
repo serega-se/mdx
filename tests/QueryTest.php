@@ -663,7 +663,11 @@ class QueryTest extends TestCase
         );
     }
 
-    public function ntrim($s)
+    /**
+     * @param string $s
+     * @return string
+     */
+    public function ntrim(string $s): string
     {
         $s =  str_replace(array("\t", "\n"), ' ', $s);
         $s =  str_replace(array("\r", "\n"), '', $s);
